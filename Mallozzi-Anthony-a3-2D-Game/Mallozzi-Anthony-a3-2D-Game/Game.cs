@@ -13,11 +13,14 @@ namespace MohawkGame2D
     {
         // Place your variables here:
 
-        Vector2 playerPosition = new(400, 130);
-        Vector2 playerSize = new(15, 25);
+        playerController player = new playerController();
 
-        Vector2 gravity = new(0, 500);
-        Vector2 velocity = new(0, 0);
+        bool matchesPickup = false;
+        bool oilPickup = false;
+
+        Vector2 crateSize = new(50, 50);
+        Vector2 matchCratePosition = new(0, 115);
+        Vector2 oilCratePosition = new(750, 115);
         /// <summary>
         ///     Setup runs once before the game loop begins.
         /// </summary>
@@ -26,7 +29,6 @@ namespace MohawkGame2D
             Window.SetSize(800, 600);
             Window.SetTitle("2D Game");
         }
-
         /// <summary>
         ///     Update runs every frame.
         /// </summary>
@@ -34,52 +36,17 @@ namespace MohawkGame2D
         {
             Window.ClearBackground(Color.DarkGray);
 
+            ItemPickup();
+            playerAttack();
+
             Grate();
-            Player();
+            Matches();
+            Oil();
 
-        }
-        public void Gravity()
-        {
-
-        }
-        public void Player()
-        {
-            float moveSpeed = 10;
-
-            Draw.LineSize = 2;
-            Draw.FillColor = Color.White;
-            Draw.Rectangle(playerPosition, playerSize);
-
-            if (Input.IsKeyboardKeyDown(KeyboardInput.Left))
-            {
-                playerPosition.X -= moveSpeed;
-                Console.WriteLine("left");
-                if (playerPosition.X < 0)
-                {
-                    playerPosition.X = 0;
-                }
-            }
-            else if (Input.IsKeyboardKeyDown(KeyboardInput.Right))
-            {
-                playerPosition.X += moveSpeed;
-                Console.WriteLine("right");
-                if (playerPosition.X > 785)
-                {
-                    playerPosition.X = 785;
-                }
-            }
-            else if (Input.IsKeyboardKeyDown(KeyboardInput.Space))
-            {
-                Console.WriteLine("jump");
-
-                velocity += gravity * Time.DeltaTime;
-                playerPosition -= velocity * Time.DeltaTime;
-            }
-
+            player.Update();
         }
         public void Grate()
         {
-
             for (int i = 0; i < 41; i++)
             {
                 Vector2 gratePosition = new Vector2(0, 100);
@@ -91,6 +58,42 @@ namespace MohawkGame2D
                 Draw.LineSize = 2;
                 Draw.FillColor = Color.Black;
                 Draw.Rectangle(gratePosition, grateSize);
+            }
+        }
+        public void Matches()
+        {
+
+
+            Draw.LineSize = 0;
+            Draw.FillColor = Color.Red;
+            Draw.Rectangle(matchCratePosition, crateSize);
+        }
+        public void Oil()
+        {
+
+            Draw.LineSize = 0;
+            Draw.FillColor = Color.Blue;
+            Draw.Rectangle(oilCratePosition, crateSize);
+        }
+        public void ItemPickup()
+        {
+
+            if (player.playerPosition.X < 50)
+            {
+                matchesPickup = true;
+                Console.WriteLine("matches");
+            }
+            if (player.playerPosition.X > 750)
+            {
+                oilPickup= true;
+                Console.WriteLine("oil");
+            }
+        }
+        public void playerAttack()
+        {
+            if (oilPickup && matchesPickup)
+            {
+                Console.WriteLine("attack ready");
             }
         }
     }
