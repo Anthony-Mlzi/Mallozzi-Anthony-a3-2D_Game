@@ -50,9 +50,9 @@ namespace MohawkGame2D
         ///     Draw a filled and outlined arc at position (<paramref name="x"/>, 
         ///     <paramref name="y"/>) expanding outward to size (<paramref name="w"/>, 
         ///     <paramref name="h"/>) from <paramref name="angleFrom"/> to
-        ///     <paramref name="angleTo"/> using <see cref="Draw.LineSize"/> for
-        ///     the outline thickness, <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the rectangle's fill Color.
+        ///     <paramref name="angleTo"/> using <see cref="GameImages.LineSize"/> for
+        ///     the outline thickness, <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the rectangle's fill Color.
         /// </summary>
         /// <param name="x">The arc's X position, defines the horizontal centre.</param>
         /// <param name="y">The arc's Y position, defines the vertical centre.</param>
@@ -68,9 +68,9 @@ namespace MohawkGame2D
         ///     Draw a filled and outlined arc at <paramref name="position"/>
         ///     expanding outward to <paramref name="size"/> from 
         ///     <paramref name="angleFrom"/> to <paramref name="angleTo"/> using 
-        ///     <see cref="Draw.LineSize"/> for the outline thickness, 
-        ///     <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the rectangle's fill Color.
+        ///     <see cref="GameImages.LineSize"/> for the outline thickness, 
+        ///     <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the rectangle's fill Color.
         /// </summary>
         /// <param name="position">The arc's position, defines the centre point.</param>
         /// <param name="size">The arc's size (width and height).</param>
@@ -84,9 +84,9 @@ namespace MohawkGame2D
         /// <summary>
         ///     Draw a filled and outlined capsule with endpoints at (<paramref name="x1"/>, <paramref name="y1"/>)
         ///     and (<paramref name="x2"/>, <paramref name="y2"/>) expanding outward to <paramref name="radius"/>
-        ///     using <see cref="Draw.LineSize"/> for the outline thickness,
-        ///     <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the circle's fill color.
+        ///     using <see cref="GameImages.LineSize"/> for the outline thickness,
+        ///     <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the circle's fill color.
         /// </summary>
         /// <param name="x1">The first capsule endpoint center's X coordinate.</param>
         /// <param name="y1">The first capsule endpoint center's Y coordinate</param>
@@ -100,9 +100,9 @@ namespace MohawkGame2D
         /// <summary>
         ///     Draw a filled and outlined capsule with endpoints at <paramref name="position1"/> 
         ///     and <paramref name="position2"/> expanding outward to <paramref name="radius"/>
-        ///     using <see cref="Draw.LineSize"/> for the outline thickness,
-        ///     <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the circle's fill color.
+        ///     using <see cref="GameImages.LineSize"/> for the outline thickness,
+        ///     <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the circle's fill color.
         /// </summary>
         /// <param name="position1">The first capsule endpoint center.</param>
         /// <param name="position2">The second capsule endpoint center.</param>
@@ -114,9 +114,9 @@ namespace MohawkGame2D
         /// <summary>
         ///     Draw a filled and outlined circle at position (<paramref name="x"/>, 
         ///     <paramref name="y"/>) expanding outward to <paramref name="radius"/>
-        ///     using <see cref="Draw.LineSize"/> for the outline thickness,
-        ///     <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the circle's fill color.
+        ///     using <see cref="GameImages.LineSize"/> for the outline thickness,
+        ///     <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the circle's fill color.
         /// </summary>
         /// <param name="x">The circle's X position, defines the horizontal centre.</param>
         /// <param name="y">The circle's Y position, defines the vertical centre.</param>
@@ -127,9 +127,9 @@ namespace MohawkGame2D
         [OverloadResolutionPriority(Vector2Priority)]
         /// <summary>
         ///     Draw a filled and outlined circle at <paramref name="position"/> expanding
-        ///     outward to <paramref name="radius"/> using <see cref="Draw.LineSize"/> for
-        ///     the outline thickness, <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the circle's fill color.
+        ///     outward to <paramref name="radius"/> using <see cref="GameImages.LineSize"/> for
+        ///     the outline thickness, <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the circle's fill color.
         /// </summary>
         /// <param name="position">The circle position, defines the centre point.</param>
         /// <param name="radius">The circle radius.</param>
@@ -140,9 +140,9 @@ namespace MohawkGame2D
         /// <summary>
         ///     Draw a filled and outlined ellipse at position (<paramref name="x"/>, 
         ///     <paramref name="y"/>) expanding outward to size (<paramref name="w"/>, 
-        ///     <paramref name="h"/>) using <see cref="Draw.LineSize"/> for the
-        ///     outline thickness, <see cref="Draw.LineColor"/> for the line's color,
-        ///     and <see cref="Draw.FillColor"/> for the ellipse's fill Color.
+        ///     <paramref name="h"/>) using <see cref="GameImages.LineSize"/> for the
+        ///     outline thickness, <see cref="GameImages.LineColor"/> for the line's color,
+        ///     and <see cref="GameImages.FillColor"/> for the ellipse's fill Color.
         /// </summary>
         /// <param name="x">The ellipse's X position, defines the horizontal centre.</param>
         /// <param name="y">The ellipse's Y position, defines the vertical centre.</param>
@@ -154,9 +154,9 @@ namespace MohawkGame2D
         [OverloadResolutionPriority(Vector2Priority)]
         /// <summary>
         ///     Draw a filled and outlined ellipse at <paramref name="position"/> expanding
-        ///     outward to <paramref name="size"/> using <see cref="Draw.LineSize"/> for
-        ///     the outline thickness, <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the ellipse's fill Color.
+        ///     outward to <paramref name="size"/> using <see cref="GameImages.LineSize"/> for
+        ///     the outline thickness, <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the ellipse's fill Color.
         /// </summary>
         /// <param name="position">The ellipse position, defines the centre point.</param>
         /// <param name="size">The size of the ellipse.</param>
@@ -166,8 +166,8 @@ namespace MohawkGame2D
         [OverloadResolutionPriority(FloatPriority)]
         /// <summary>
         ///     Draw a line with rounded ends from (<paramref name="x1"/>, <paramref name="y1"/>) to
-        ///     (<paramref name="x2"/>, <paramref name="y2"/>) using <see cref="Draw.LineSize"/> and
-        ///     <see cref="Draw.LineColor"/>.
+        ///     (<paramref name="x2"/>, <paramref name="y2"/>) using <see cref="GameImages.LineSize"/> and
+        ///     <see cref="GameImages.LineColor"/>.
         /// </summary>
         /// <param name="x1">Line start position X.</param>
         /// <param name="y1">Line start position Y.</param>
@@ -179,7 +179,7 @@ namespace MohawkGame2D
         [OverloadResolutionPriority(Vector2Priority)]
         /// <summary>
         ///     Draw a line with rounded ends from <paramref name="start"/> to <paramref name="end"/> 
-        ///     using <see cref="Draw.LineSize"/> and <see cref="Draw.LineColor"/>.
+        ///     using <see cref="GameImages.LineSize"/> and <see cref="GameImages.LineColor"/>.
         /// </summary>
         /// <param name="start">Line start position.</param>
         /// <param name="end">Line end position.</param>
@@ -189,8 +189,8 @@ namespace MohawkGame2D
         [OverloadResolutionPriority(FloatPriority)]
         /// <summary>
         ///     Draw a line with sharp ends from (<paramref name="x1"/>, <paramref name="y1"/>) to
-        ///     (<paramref name="x2"/>, <paramref name="y2"/>) using <see cref="Draw.LineSize"/>
-        ///     and <see cref="Draw.LineColor"/>.
+        ///     (<paramref name="x2"/>, <paramref name="y2"/>) using <see cref="GameImages.LineSize"/>
+        ///     and <see cref="GameImages.LineColor"/>.
         /// </summary>
         /// <param name="x1">Line start position X.</param>
         /// <param name="y1">Line start position Y.</param>
@@ -202,7 +202,7 @@ namespace MohawkGame2D
         [OverloadResolutionPriority(Vector2Priority)]
         /// <summary>
         ///     Draw a line with sharp ends from <paramref name="start"/> to <paramref name="end"/> 
-        ///     using <see cref="Draw.LineSize"/> and <see cref="Draw.LineColor"/>.
+        ///     using <see cref="GameImages.LineSize"/> and <see cref="GameImages.LineColor"/>.
         /// </summary>
         /// <param name="start">Line start position.</param>
         /// <param name="end">Line end position.</param>
@@ -212,8 +212,8 @@ namespace MohawkGame2D
         [OverloadResolutionPriority(FloatPriority)]
         /// <summary>
         ///     Draw lines with rounded ends between all <paramref name="xCoordinates"/>
-        ///     and <paramref name="yCoordinates"/> (pairs) using <see cref="Draw.LineSize"/>
-        ///     and <see cref="Draw.LineColor"/>
+        ///     and <paramref name="yCoordinates"/> (pairs) using <see cref="GameImages.LineSize"/>
+        ///     and <see cref="GameImages.LineColor"/>
         /// </summary>
         /// <remarks>
         ///     Order of coordinates is: X, Y, X, Y, etc. If the number of coordinates passed
@@ -241,8 +241,8 @@ namespace MohawkGame2D
         [OverloadResolutionPriority(IntPriority)]
         /// <summary>
         ///     Draw lines with rounded ends between all <paramref name="xCoordinates"/>
-        ///     and <paramref name="yCoordinates"/> (pairs) using <see cref="Draw.LineSize"/>
-        ///     and <see cref="Draw.LineColor"/>
+        ///     and <paramref name="yCoordinates"/> (pairs) using <see cref="GameImages.LineSize"/>
+        ///     and <see cref="GameImages.LineColor"/>
         /// </summary>
         /// <remarks>
         ///     Order of coordinates is: X, Y, X, Y, etc. If the number of coordinates passed
@@ -270,7 +270,7 @@ namespace MohawkGame2D
         [OverloadResolutionPriority(Vector2Priority)]
         /// <summary>
         ///     Draw lines with rounded ends between all <paramref name="points"/>
-        ///     using <see cref="Draw.LineSize"/> and <see cref="Draw.LineColor"/>
+        ///     using <see cref="GameImages.LineSize"/> and <see cref="GameImages.LineColor"/>
         /// </summary>
         /// <param name="points">The points to draw between.</param>
         public static void PolyLine(params Vector2[] points)
@@ -280,9 +280,9 @@ namespace MohawkGame2D
         /// <summary>
         ///     Draw a filled and outlined polygon at position (<paramref name="x"/>, 
         ///     <paramref name="y"/>) expanding outward to <paramref name="radius"/>
-        ///     using <see cref="Draw.LineSize"/> for the outline thickness,
-        ///     <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the circle's fill color.
+        ///     using <see cref="GameImages.LineSize"/> for the outline thickness,
+        ///     <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the circle's fill color.
         ///     <paramref name="mode"/> determines if the polygon resides inside
         ///     or outside of the radius bounds.
         /// </summary>
@@ -299,9 +299,9 @@ namespace MohawkGame2D
         /// <summary>
         ///     Draw a filled and outlined polygon at <paramref name="position"/>
         ///     expanding outward to <paramref name="radius"/>
-        ///     using <see cref="Draw.LineSize"/> for the outline thickness,
-        ///     <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the circle's fill color.
+        ///     using <see cref="GameImages.LineSize"/> for the outline thickness,
+        ///     <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the circle's fill color.
         ///     <paramref name="mode"/> determines if the polygon resides inside
         ///     or outside of the radius bounds.
         /// </summary>
@@ -320,9 +320,9 @@ namespace MohawkGame2D
         ///     (<paramref name="x2"/>, <paramref name="y2"/>),
         ///     (<paramref name="x3"/>, <paramref name="y3"/>), and
         ///     (<paramref name="x4"/>, <paramref name="y4"/>)
-        ///     using <see cref="Draw.LineSize"/> for the outline thickness,
-        ///     <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the quad's fill color.
+        ///     using <see cref="GameImages.LineSize"/> for the outline thickness,
+        ///     <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the quad's fill color.
         /// </summary>
         /// <param name="x1">The quad's first corner's X position.</param>
         /// <param name="y1">The quad's first corner's Y position.</param>
@@ -340,9 +340,9 @@ namespace MohawkGame2D
         ///     Draw a filled and outlined quad with corners at positions
         ///     <paramref name="position1"/>, <paramref name="position2"/>,
         ///     <paramref name="position3"/>, and <paramref name="position4"/>
-        ///     using <see cref="Draw.LineSize"/> for the outline thickness,
-        ///     <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the quad's fill color.
+        ///     using <see cref="GameImages.LineSize"/> for the outline thickness,
+        ///     <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the quad's fill color.
         /// </summary>
         /// <param name="position1">The quad's first corner's position.</param>
         /// <param name="position2">The quad's second corner's position.</param>
@@ -355,9 +355,9 @@ namespace MohawkGame2D
         /// <summary>
         ///     Draw a filled and outlined rectangle at position (<paramref name="x"/>, 
         ///     <paramref name="y"/>) expanding right and down to size (<paramref name="w"/>, 
-        ///     <paramref name="h"/>) using <see cref="Draw.LineSize"/> for
-        ///     the outline thickness, <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the rectangle's fill Color.
+        ///     <paramref name="h"/>) using <see cref="GameImages.LineSize"/> for
+        ///     the outline thickness, <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the rectangle's fill Color.
         /// </summary>
         /// <param name="x">The rectangle's X position, defines the left edge.</param>
         /// <param name="y">The rectangle's Y position, defines the top edge.</param>
@@ -369,9 +369,9 @@ namespace MohawkGame2D
         [OverloadResolutionPriority(Vector2Priority)]
         /// <summary>
         ///     Draw a filled and outlined rectangle at <paramref name="position"/> expanding
-        ///     right and down to <paramref name="size"/> using <see cref="Draw.LineSize"/> for
-        ///     the outline thickness, <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the rectangle's fill Color.
+        ///     right and down to <paramref name="size"/> using <see cref="GameImages.LineSize"/> for
+        ///     the outline thickness, <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the rectangle's fill Color.
         /// </summary>
         /// <param name="position">The rectangle position, defines the upper-left corner.</param>
         /// <param name="size">The size of the rectangle.</param>
@@ -382,9 +382,9 @@ namespace MohawkGame2D
         /// <summary>
         ///     Draw a filled and outlined square at position (<paramref name="x"/>, 
         ///     <paramref name="y"/>) expanding right and down to <paramref name="size"/>
-        ///     using <see cref="Draw.LineSize"/> for the outline thickness,
-        ///     <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the square's fill Color.
+        ///     using <see cref="GameImages.LineSize"/> for the outline thickness,
+        ///     <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the square's fill Color.
         /// </summary>
         /// <param name="x">The square's X position, defines the left edge.</param>
         /// <param name="y">The square's Y position, defines the top edge.</param>
@@ -395,9 +395,9 @@ namespace MohawkGame2D
         [OverloadResolutionPriority(Vector2Priority)]
         /// <summary>
         ///     Draw a filled and outlined square at <paramref name="position"/> expanding
-        ///     right and down to <paramref name="size"/> using <see cref="Draw.LineSize"/> for
-        ///     the outline thickness, <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the square's fill Color.
+        ///     right and down to <paramref name="size"/> using <see cref="GameImages.LineSize"/> for
+        ///     the outline thickness, <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the square's fill Color.
         /// </summary>
         /// <param name="position">The square position, defines the upper-left corner.</param>
         /// <param name="size">The square's width and height.</param>
@@ -410,9 +410,9 @@ namespace MohawkGame2D
         ///     (<paramref name="x1"/>, <paramref name="y1"/>),
         ///     (<paramref name="x2"/>, <paramref name="y2"/>), and
         ///     (<paramref name="x3"/>, <paramref name="y3"/>)
-        ///     using <see cref="Draw.LineSize"/> for the outline thickness,
-        ///     <see cref="Draw.LineColor"/> for the line's color, and
-        ///     <see cref="Draw.FillColor"/> for the triangle's fill color.
+        ///     using <see cref="GameImages.LineSize"/> for the outline thickness,
+        ///     <see cref="GameImages.LineColor"/> for the line's color, and
+        ///     <see cref="GameImages.FillColor"/> for the triangle's fill color.
         /// </summary>
         /// <param name="x1">The triangle's first corner's X position.</param>
         /// <param name="y1">The triangle's first corner's Y position.</param>
@@ -427,9 +427,9 @@ namespace MohawkGame2D
         /// <summary>
         ///     Draw a filled and outlined triangle with corners at positions
         ///     <paramref name="position1"/>, <paramref name="position2"/>,
-        ///     and <paramref name="position3"/> using <see cref="Draw.LineSize"/>
-        ///     for the outline thickness, <see cref="Draw.LineColor"/> for the line's
-        ///     color, and <see cref="Draw.FillColor"/> for the triangle's fill color.
+        ///     and <paramref name="position3"/> using <see cref="GameImages.LineSize"/>
+        ///     for the outline thickness, <see cref="GameImages.LineColor"/> for the line's
+        ///     color, and <see cref="GameImages.FillColor"/> for the triangle's fill color.
         /// </summary>
         /// <param name="position1">The triangle's first corner's position.</param>
         /// <param name="position2">The triangle's second corner's position.</param>
