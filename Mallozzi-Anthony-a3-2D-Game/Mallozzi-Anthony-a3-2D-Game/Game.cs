@@ -13,8 +13,10 @@ namespace MohawkGame2D
     public class Game
     {
         // Place your variables here:
-
         PlayerController player = new PlayerController();
+        Coins[] coin = new Coins[20];
+
+        ColorF backgroundColor = new(0.7f, 0.9f, 1);
 
         /// <summary>
         ///     Setup runs once before the game loop begins.
@@ -26,16 +28,27 @@ namespace MohawkGame2D
             Window.SetTitle("2D Game");
 
             //place classes
+            for (int i = 0; i < coin.Length; i++)
+            {
+                coin[i] = new Coins();
+                coin[i].Setup();
+            }
         }
         /// <summary>
         ///     Update runs every frame.
         /// </summary>
         public void Update()
         {
-            Window.ClearBackground(Color.DarkGray);
+            Window.ClearBackground(backgroundColor);
 
-            player.update();
+            for (int i = 0; i < coin.Length; i++)
+            {
+                coin[i].Update();
+            }
+            player.Update();
+
         }
+
     }
 
 }

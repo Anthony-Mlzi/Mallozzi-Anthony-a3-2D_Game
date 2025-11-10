@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Numerics;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,8 +13,8 @@ namespace MohawkGame2D
     {
         //class variables
 
-        public Vector2 playerPosition = new(400, 0);
-        public Vector2 playerSize = new(50, 50);
+        public Vector2 playerPosition = new(400, 300);
+        public Vector2 playerSize = new(20, 20);
         public Vector2 velocity = new(0, 0);
         public Vector2 gravity = new(0, 500);
 
@@ -21,31 +23,74 @@ namespace MohawkGame2D
         public float leftEdge;
         public float rightEdge;
 
-        public void setup()
+        float jumpHeight = 250;
+
+        public void Setup()
         {
 
         }
-        public void update()
+        public void Update()
         {
+            PlayerInput();
 
-            //player gravity
+            ProcessGravity();
+
+            ProcessCollision();
+
+            DrawPlayer();
+        }
+        public void ProcessGravity()
+        {
+            //basic gravity equation
             velocity += gravity * Time.DeltaTime;
             playerPosition += velocity * Time.DeltaTime;
-
-            //player collision
-            bottomEdge = playerPosition.Y + 50;
+        }
+        public void ProcessCollision()
+        {
+            //defining player collision
+            bottomEdge = playerPosition.Y + playerSize.Y;
             topEdge = playerPosition.Y;
+            leftEdge = playerPosition.X;
+            rightEdge = playerPosition.X + playerSize.X;
 
-            if (bottomEdge >= 600)
+            if (bottomEdge > Window.Height)
             {
-                velocity *= -1;
+                playerPosition.Y = Window.Height - playerSize.Y;
+            }
+            if (topEdge < 0)
+            {
+                playerPosition.Y = 0;
+            }
+            if (leftEdge < 0)
+            {
+                playerPosition.X = 0;
+            }
+            if (rightEdge > Window.Width)
+            {
+                playerPosition.X = Window.Width - playerSize.X;
             }
 
-            //player draw
+        }
+        public void PlayerInput()
+        {
+            //move right
+            if (Input.IsKeyboardKeyDown(KeyboardInput.Right)) playerPosition.X += 2;
+
+            //move left
+            if (Input.IsKeyboardKeyDown(KeyboardInput.Left)) playerPosition.X -= 2;
+
+            //jump
+            if (Input.IsKeyboardKeyPressed(KeyboardInput.Up))
+            {
+                velocity.Y = jumpHeight;
+                velocity *= -1;
+            }  
+        }
+        public void DrawPlayer()
+        {
+            //player
             Draw.FillColor = Color.Red;
             Draw.Rectangle(playerPosition, playerSize);
-
-            
         }
     }
 }
