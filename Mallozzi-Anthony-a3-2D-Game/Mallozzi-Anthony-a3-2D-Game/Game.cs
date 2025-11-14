@@ -14,9 +14,10 @@ namespace MohawkGame2D
     {
         // Place your variables here:
         PlayerController player = new PlayerController();
-        Coins[] coin = new Coins[20];
+        Stars[] star = new Stars[20];
+        LampController lamp = new LampController();
 
-        ColorF backgroundColor = new(0.7f, 0.9f, 1);
+        bool gamestart = false;
 
         /// <summary>
         ///     Setup runs once before the game loop begins.
@@ -27,28 +28,48 @@ namespace MohawkGame2D
             Window.SetSize(800, 600);
             Window.SetTitle("2D Game");
 
-            //place classes
-            for (int i = 0; i < coin.Length; i++)
+            //generate random stars
+            for (int i = 0; i < star.Length; i++)
             {
-                coin[i] = new Coins();
-                coin[i].Setup();
+                star[i] = new Stars();
+                star[i].Setup();
             }
+
+            lamp.Setup();
+
+            player.Setup();
         }
         /// <summary>
         ///     Update runs every frame.
         /// </summary>
         public void Update()
         {
-            Window.ClearBackground(backgroundColor);
+            Window.ClearBackground(Color.Black);
 
-            for (int i = 0; i < coin.Length; i++)
+            if (!gamestart)
             {
-                coin[i].Update();
+                Text.Color = Color.Yellow;
+                Text.Draw("Lamplight", 300, 300);
+                Text.Draw("press ENTER to play", 225, 350);
+                if (Input.IsKeyboardKeyPressed(KeyboardInput.Enter))
+                {
+                    gamestart = true;
+                }
             }
-            player.Update();
+            if (gamestart)
+            {
+                //gets star update
+                for (int i = 0; i < star.Length; i++)
+                {
+                    star[i].Update();
+                }
 
+                //place player controller
+                player.Update(lamp);
+
+                lamp.Update();            
+            }
         }
-
     }
 
 }

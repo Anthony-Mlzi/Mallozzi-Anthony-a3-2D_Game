@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace MohawkGame2D
 {
-    public class Coins
+    public class Stars
     {
         //variables
-        public Vector2 coinPosition;
-        public float coinRadius = 8;
+        public Vector2 starPosition;
+        public float starRadius;
 
         public void Setup()
         {
@@ -21,17 +21,17 @@ namespace MohawkGame2D
         {
             renderCoins();
         }
-
         public void initialize()
         {
-            coinPosition = new Vector2(Random.Float(0, 800), Random.Float(0, 600));
+            starPosition = new Vector2(Random.Float(0, 800), Random.Float(0, 600));
+            starRadius = Random.Float(1, 3);
         }
         public void renderCoins()
         {
-            Draw.LineSize = 2;
+            Draw.LineSize = 0;
             Draw.LineColor = Color.White;
             Draw.FillColor = Color.Yellow;
-            Draw.Circle(coinPosition, coinRadius);
+            Draw.Circle(starPosition, starRadius);
         }
     }
 }

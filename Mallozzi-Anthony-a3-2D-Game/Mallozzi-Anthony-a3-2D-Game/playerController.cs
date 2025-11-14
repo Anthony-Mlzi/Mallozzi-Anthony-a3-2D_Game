@@ -18,6 +18,9 @@ namespace MohawkGame2D
         public Vector2 velocity = new(0, 0);
         public Vector2 gravity = new(0, 500);
 
+        public float lampLight = 40;
+        public float lampCollision = 30;
+
         public float bottomEdge;
         public float topEdge;
         public float leftEdge;
@@ -25,17 +28,19 @@ namespace MohawkGame2D
 
         float jumpHeight = 250;
 
+        public bool lampOn = false;
         public void Setup()
         {
-
         }
-        public void Update()
+        public void Update(LampController lamp)
         {
             PlayerInput();
 
             ProcessGravity();
 
             ProcessCollision();
+
+            LampCollision(lamp);
 
             DrawPlayer();
         }
@@ -89,8 +94,45 @@ namespace MohawkGame2D
         public void DrawPlayer()
         {
             //player
-            Draw.FillColor = Color.Red;
+            Draw.FillColor = Color.Black;
             Draw.Rectangle(playerPosition, playerSize);
+        }
+        public void LampCollision(LampController lamp)
+        {
+
+
+            Draw.FillColor = Color.Yellow;
+            Draw.LineSize = 0;
+            Draw.Circle(playerPosition.X + 10, playerPosition.Y + 10, lampLight);
+
+            Draw.FillColor = Color.White;
+            Draw.LineSize = 0;
+            Draw.Circle(playerPosition.X + 10, playerPosition.Y + 10, lampCollision);
+
+            if (Input.IsKeyboardKeyDown(KeyboardInput.Space))
+            {
+                lampLight = 80;
+                if (Vector2.Distance(lamp.lampPosition, playerPosition) < 30)
+                {
+                    Console.WriteLine("YAYAYYAYA");
+
+                    lampOn = true;
+                }
+            }
+            else
+            {
+                lampLight = 40;
+            }
+
+            if (lampOn == true)
+            {
+                Draw.FillColor = Color.Yellow;
+                Draw.LineSize = 0;
+                Draw.Circle(lamp.lampPosition, 80);
+
+                
+            }
+
         }
     }
 }
